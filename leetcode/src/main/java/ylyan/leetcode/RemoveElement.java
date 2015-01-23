@@ -23,7 +23,7 @@ public class RemoveElement {
 	}
 
 	public int removeElement(int[] A, int elem) {
-//		return (method1Pass(A, elem));
+		// return (method1Pass(A, elem));
 		return (method2Pass(A, elem));
 	}
 
@@ -45,14 +45,14 @@ public class RemoveElement {
 			pos = Arrays.binarySearch(A, elem);
 		}
 		Arrays.sort(A);
-//		logger.debug(pos);
-//		logger.debug("return value: " + (A.length - count));
-//		 long estimatedTime = System.currentTimeMillis() - startTime;
+		// logger.debug(pos);
+		// logger.debug("return value: " + (A.length - count));
+		// long estimatedTime = System.currentTimeMillis() - startTime;
 		long estimatedTime = System.nanoTime() - startTime;
 		logger.debug("estimatedTime: " + estimatedTime);
 		return A.length - count;
 	}
-	
+
 	// Runtime: 226 ms on leetcode
 	int method2Pass(int[] A, int elem) {
 		// long startTime = System.currentTimeMillis();
