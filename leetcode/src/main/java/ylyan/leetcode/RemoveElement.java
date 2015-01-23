@@ -27,7 +27,7 @@ public class RemoveElement {
 		return (method2Pass(A, elem));
 	}
 
-	// Runtime: 187 ms on leetcode
+	// Runtime: 187 ms on leetcode, it seems to very fast in the overall submitted Java solutions.
 	int method1Pass(int[] A, int elem) {
 		// long startTime = System.currentTimeMillis();
 		long startTime = System.nanoTime();
