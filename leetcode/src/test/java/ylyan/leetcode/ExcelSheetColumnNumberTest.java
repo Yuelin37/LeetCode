@@ -15,7 +15,10 @@ public class ExcelSheetColumnNumberTest extends TestCase {
 	}
 	
 	public void testA(){
-		assertEquals(0,escn.titleToNumber("ABCZ"));
+		assertEquals(1,escn.titleToNumber("A"));
+		assertEquals(2,escn.titleToNumber("B"));
+		assertEquals(27,escn.titleToNumber("AA"));
+		assertEquals(28,escn.titleToNumber("AB"));
 	}
 
 }
