@@ -20,8 +20,9 @@ public class MergeSortedArray {
 
 		// method1Pass(A,m,B,n);
 		// method2(A, m, B, n);
-//		method4(A, m, B, n);
-		fromLeetCode(A, m, B, n);
+		// method4(A, m, B, n);
+//		fromLeetCode(A, m, B, n);
+		myBest(A, m, B, n);
 
 	}
 
@@ -84,32 +85,18 @@ public class MergeSortedArray {
 		}
 	}
 
-	// private void method3(int A[], int m, int B[], int n) {
-	// int high = m - 1, low = m - 1;
-	// for (int ib = B.length - 1; ib >= 0; ib--) {
-	// System.out.println(B[ib]);
-	// while (low >= 0 && B[ib] < A[low]) {
-	// low--;
-	// }
-	//
-	// if (low<0)
-	// low = 0;
-	//
-	// for (int i = 0; i <= high - low; i++) {
-	// A[high - i + (ib + 1)] = A[high - i];
-	// }
-	// A[high] = B[ib];
-	// high = low;
-	// System.out.println(Arrays.toString(A));
-	//
-	// if (B[ib] >= A[high]) {
-	// high++;
-	// low++;
-	// A[high] = B[ib];
-	// }
-	// }
-	//
-	// }
+	private void myBest(int A[], int m, int B[], int n) {
+
+		int last = m + n - 1;
+		int ia = m - 1;
+		for (int ib = n - 1; ib >= 0; ib--) {
+			while (ia >= 0 && B[ib] <= A[ia]) {
+				A[last--] = A[ia--];
+			}
+			A[last--] = B[ib];
+		}
+
+	}
 
 	private void method4(int A[], int m, int B[], int n) {
 		if (m == 0) {
@@ -134,7 +121,7 @@ public class MergeSortedArray {
 				}
 
 				if (B[ib] >= A[ia] && ia == m - 1 + moved) {
-					int leftB = n-moved;
+					int leftB = n - moved;
 					for (int i = 0; i < leftB; i++) {
 						A[ia + i + 1] = B[ib + i];
 						cur = ia + 1;
@@ -145,16 +132,24 @@ public class MergeSortedArray {
 			}
 		}
 	}
-	
-	private void fromLeetCode(int A[], int m, int B[], int n){
-		int j=m-1;
-        int k=n-1;
-        for(int i=n+m-1;i>-1;i--){
-            if( k<0) break;
-            if(j<0)  {A[i]=B[k];k--;}
-            else if(A[j]>B[k]) {A[i]=A[j];j--;}
-            else {A[i]=B[k];k--;}
 
-        }
+	private void fromLeetCode(int A[], int m, int B[], int n) {
+		int j = m - 1;
+		int k = n - 1;
+		for (int i = n + m - 1; i > -1; i--) {
+			if (k < 0)
+				break;
+			if (j < 0) {
+				A[i] = B[k];
+				k--;
+			} else if (A[j] > B[k]) {
+				A[i] = A[j];
+				j--;
+			} else {
+				A[i] = B[k];
+				k--;
+			}
+
+		}
 	}
 }
