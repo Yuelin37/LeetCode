@@ -13,7 +13,6 @@ public abstract class BaseTestCase extends TestCase{
 	}
 	
 	public BaseTestCase(){
-//		PropertyConfigurator.configure("log.conf");
 	}
 
 }

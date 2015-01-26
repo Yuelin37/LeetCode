@@ -13,7 +13,7 @@ public class MergeSortedArrayTest extends BaseTestCase {
 
 	protected void tearDown() throws Exception {
 		super.tearDown();
-//		logger.debug("haha");
+//		logger.debug("Haha");
 	}
 
 	public void testMerge() {
