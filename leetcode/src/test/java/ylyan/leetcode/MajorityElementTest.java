@@ -15,8 +15,8 @@ public class MajorityElementTest extends BaseTestCase {
 	}
 
 	public void testME() {
-		int[] A = new int[] { 1, 3, 2, 5, 7, 2, 3, 2, 8, 2, 2, 2, 9, 2,0,0};
-//		int[] A = new int[] { 1,2,2,3,};
+//		int[] A = new int[] { 1, 3, 2, 5, 7, 2, 3, 2, 8, 2, 2, 2, 9, 2,0,0};
+		int[] A = new int[] { 1,2,2,2,2,3,};
 		logger.debug(me.majorityElement(A));
 	}
 }
