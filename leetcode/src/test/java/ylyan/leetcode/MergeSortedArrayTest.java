@@ -6,7 +6,7 @@ public class MergeSortedArrayTest extends BaseTestCase {
 
 	private MergeSortedArray msa;
 
-	protected void setUp() {
+	protected void setUp() throws Exception{
 		super.setUp();
 		msa = new MergeSortedArray();
 	}
